@@ -31,9 +31,12 @@ hr {
   display: inline-block;
   margin-top: -25px;
   margin-right: -5px;
-  border: 1px solid black;
   vertical-align: top;
-  font-size: 80px;
+  font-family: 'Caveat Brush', cursive;
+  font-size: 100px;
+  text-align: center;
+  border: 1px solid black;
+  padding: 0 0 0 0;
 }
 
 #playerX {
@@ -61,53 +64,44 @@ hr {
 #zero {
   height: 150px;
   width: 150px;
-  padding: 0;
 }
 
 #one {
   height: 150px;
   width: 150px;
-  padding: 0;
 }
 
 #two {
   height: 150px;
   width: 150px;
-  padding: 0;
 }
 
 #three {
   height: 150px;
   width: 150px;
-  padding: 0;
 }
 
 #four {
   height: 150px;
   width: 150px;
-  padding: 0;
 }
 
 #five {
   height: 150px;
   width: 150px;
-  padding: 0;
 }
 
 #six {
   height: 150px;
   width: 150px;
-  padding: 0;
 }
 
 #seven {
   height: 150px;
   width: 150px;
-  padding: 0;
 }
 
 #eight {
   height: 150px;
   width: 150px;
-  padding: 0;
 }
