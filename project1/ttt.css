@@ -4,6 +4,10 @@
   text-align: center;
 }
 
+body {
+
+}
+
 h1 {
   font-size: 60px;
   opacity: 0.4;
@@ -19,54 +23,90 @@ hr {
 }
 
 #gameboard {
-  height: 450px;
-  width: 450px;
   float: left;
   margin-top: -20px;
 }
 
-div {
+.grid {
   display: inline-block;
-  height: 150px;
-  width: 150px;
-  padding: 0;
   margin-top: -25px;
   margin-right: -5px;
+  border: 1px solid black;
+  vertical-align: top;
+}
+
+#playerX {
+  display: inline-block;
+  font-size: 20px;
+  height: 140px;
+  width: 450px;
+  border: 1px solid black;
+  margin-top: -40px;
+  margin-right: 320px;
+  margin-bottom: 10px;
+  border: 1px solid black;
+}
+
+#playerO {
+  display: inline-block;
+  font-size: 20px;
+  height: 140px;
+  width: 450px;
+  margin-top: -5px;
+  margin-right: 320px;
   border: 1px solid black;
 }
 
 #zero {
-  border-right: 1px solid black;
+  height: 150px;
+  width: 150px;
+  padding: 0;
 }
 
 #one {
-
+  height: 150px;
+  width: 150px;
+  padding: 0;
 }
 
 #two {
-
+  height: 150px;
+  width: 150px;
+  padding: 0;
 }
 
 #three {
-
+  height: 150px;
+  width: 150px;
+  padding: 0;
 }
 
 #four {
-
+  height: 150px;
+  width: 150px;
+  padding: 0;
 }
 
 #five {
-
+  height: 150px;
+  width: 150px;
+  padding: 0;
 }
 
 #six {
-
+  height: 150px;
+  width: 150px;
+  padding: 0;
 }
 
 #seven {
-
+  height: 150px;
+  width: 150px;
+  padding: 0;
 }
 
 #eight {
-
+  height: 150px;
+  width: 150px;
+  padding: 0;
 }
