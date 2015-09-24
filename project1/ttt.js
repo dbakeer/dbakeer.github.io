@@ -1,22 +1,3 @@
-var playerX = "X";
-var playerO = "O";
-
-var newGame = function () {
-  $('.grid').one('click', function (e) {
-    if (turn===0) {
-      $(this).text(playerX);
-      boardCheck();
-      checkWin();
-      turn = 1;
-    } else {
-      $(this).text(playerO);
-      boardCheck();
-      checkWin();
-      turn = 0;
-    }
-  });
-}
-
 //Initializes Game
 $(document).ready(
   function xInfo() {
@@ -36,32 +17,6 @@ $(document).ready(
     document.getElementById("playerOName").innerHTML = oName + "     using O's";
   }
 });
-
-// determines if the grid is filled or not
-var grids = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-gridFill = function () {
-    grids[0] = $('#zero').innerHTML();
-    grids[1] = $('#one').innerHTML();
-    grids[2] = $('#two').innerHTML();
-    grids[3] = $('#three').innerHTML();
-    grids[4] = $('#four').innerHTML();
-    grids[5] = $('#five').innerHTML();
-    grids[6] = $('#six').innerHTML();
-    grids[7] = $('#seven').innerHTML();
-    grids[8] = $('#eight').innerHTML();
-};
-
-// winning combinations dependent on the position of the grid 0 through 8
-var winCombo = [
-  [0, 1, 2],
-  [0, 3, 6],
-  [0, 4, 8],
-  [1, 4, 7],
-  [2, 4, 6],
-  [2, 5, 8],
-  [3, 4, 5],
-  [6, 7, 8]
-];
 
 
 // x's in the grid
@@ -204,3 +159,15 @@ $("#eight").click(function() {
     })
 })
 };
+
+// takin' turns budday
+var playerX = 1;
+function gameDisplay() {
+  if (playerX == 1){
+    document.getElementById('grid').text('X').html;
+    playerX = 0
+  } else {
+    document.getElementById('grid').text('0').html;
+    playerX = 1;
+  }
+}
