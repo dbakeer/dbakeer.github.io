@@ -214,26 +214,29 @@ var winCombo = [
 xWinner = false;
 oWinner = false;
 function determineWinner(){
-
-// checking to see if player X is the winner
-
 for (i = 0; i < winCombo.length; i++){
-
   var winCondition = winCombo[i];
   if (grid[winCondition[0]] == "X" &&
       grid[winCondition[1]] == "X" &&
       grid[winCondition[2]] == "X"){
        xWinner = true;
-       alert("X WINS");
      }
   else if (grid[winCondition[0]] == "O" &&
       grid[winCondition[1]] == "O" &&
       grid[winCondition[2]] == "O"){
       oWinner = true;
-      alert("O WINS");
-        }
-  else {
-    alert("TIED");
     }
+  }
+}
+
+function announceWinner(){
+  if (xWinner === true){
+    alert("X WINS");
+  }
+  else if (oWinner === true){
+    alert("O WINS");
+  }
+  else if (gridFill !== winCombo){
+    alert("TIE");
   }
 }
