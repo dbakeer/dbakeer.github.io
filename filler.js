@@ -50,3 +50,13 @@ var filledGrid = 0;
   // $('.grid').on("click", function (){
   //   $('<div>X</div>').appendTo('#zero')
   // });
+
+  // winning grid combinations listed (just in case winCombo array has issues)
+  // var rowOne = [grid[0], grid[1], grid[2]];
+  // var rowTwo = [grid[3], grid[4], grid[5]];
+  // var rowThree = [grid[6], grid[7], grid[8]];
+  // var columnOne = [grid[0], grid[3], grid[6]];
+  // var columnTwo = [grid[1], grid[4], grid[7]];
+  // var columnThree = [grid[2], grid[5], grid[8]];
+  // var diagonalOne = [grid[0], grid[4], grid[8]];
+  // var diagonalTwo = [grid[2], grid[4], grid[6]];

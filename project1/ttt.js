@@ -22,7 +22,7 @@ $(document).ready(
 
 
 // x's in the grid
-function xPlay () {
+var xPlay = function xPlay () {
   $("#zero").click(function() {
       $("#zero").text('X').html();
         playerXTurn = false;
@@ -77,10 +77,10 @@ function xPlay () {
       playerOTurn = true;
       gameDisplay();
   });
-}
+};
 
 // o's in the grid
-function oPlay () {
+var oPlay = function oPlay () {
   $("#zero").click(function() {
       $("#zero").text('O').html();
       playerXTurn = true;
@@ -135,7 +135,7 @@ function oPlay () {
       playerOTurn = false;
       gameDisplay();
   });
-}
+};
 
 // takin' turns budday
 var playerXTurn = true;
@@ -151,26 +151,38 @@ function gameDisplay () {
 }
 
 // determine a if a grid is filled
-var grid = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-gridFill = function () {
-    grid[0] = $('#zero').innerHTML();
-    grid[1] = $('#one').innerHTML();
-    grid[2] = $('#two').innerHTML();
-    grid[3] = $('#three').innerHTML();
-    grid[4] = $('#four').innerHTML();
-    grid[5] = $('#five').innerHTML();
-    grid[6] = $('#six').innerHTML();
-    grid[7] = $('#seven').innerHTML();
-    grid[8] = $('#eight').innerHTML();
+var grid = [];
+var gridFill = function () {
+    grid[0] = $('#zero').html();
+    grid[1] = $('#one').html();
+    grid[2] = $('#two').html();
+    grid[3] = $('#three').html();
+    grid[4] = $('#four').html();
+    grid[5] = $('#five').html();
+    grid[6] = $('#six').html();
+    grid[7] = $('#seven').html();
+    grid[8] = $('#eight').html();
 };
 
+// list out winning grid combinations in an array
 var winCombo = [
-  [grid[0], grid[1], grid[2]],
-  [grid[0], grid[3], grid[6]],
-  [grid[0], grid[4], grid[8]],
-  [grid[1], grid[4], grid[7]],
-  [grid[2], grid[4], grid[6]],
-  [grid[2], grid[5], grid[8]],
-  [grid[3], grid[4], grid[5]],
-  [grid[6], grid[7], grid[8]]
+  [0 , 1 , 2],
+  [0 , 3 , 6],
+  [0 , 4 , 8],
+  [1 , 4 , 7],
+  [2 , 4 , 6],
+  [2 , 5 , 8],
+  [3 , 4 , 5],
+  [6 , 7 , 8]
 ];
+
+// determine the winner
+// xWinner = false;
+// oWinner = false;
+// function determineWinner (){
+//   if (xPlay == winCombo[i])
+//     xWinner = true;} else if {
+//       (oPlay == winCombo[i])
+//     oWinner = true;}
+//     }
+// }
