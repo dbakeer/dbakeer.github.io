@@ -1,25 +1,23 @@
-//Initializes Game
+// FIRE DA LAZERZ
+
+// setting up information input for Player X
 $(document).ready(
   function xInfo() {
-    // setting up information input for Player X
     var xName = prompt("Please enter your name", "Player X");
-
     if (xName !== null) {
-        document.getElementById("playerXName").innerHTML = xName + "     using X's";
-    }
-  });
+      document.getElementById("playerXName").innerHTML = xName + "     using X's";
+      }});
+
 // setting up name input for Player O
 $(document).ready(
-  function oInfo (){
+  function oInfo() {
     var oName = prompt("Please enter your name, Player O", "Player O");
-
-  if (oName !== null) {
-    document.getElementById("playerOName").innerHTML = oName + "     using O's";
-  }
-
-  gameDisplay ();
-});
-
+    if (oName !== null) {
+      document.getElementById("playerOName").innerHTML = oName + "     using O's";
+    }
+// display the game, function defined below
+    gameDisplay ();
+  });
 
 // x's in the grid
 var xPlay = function xPlay () {
@@ -177,12 +175,63 @@ var winCombo = [
 ];
 
 // determine the winner
-// xWinner = false;
-// oWinner = false;
+xWinner = false;
+oWinner = false;
+function determineWinner(){
+
+// checking to see if player X is the winner
+
+for (i = 0; i < winCombo.length; i++){
+
+  var winCondition = winCombo[i];
+  if (grid[winCondition[0]] == "X" &&
+      grid[winCondition[1]] == "X" &&
+      grid[winCondition[2]] == "X"){
+       xWinner = true;
+       alert("X WINS");
+     }
+  else if (grid[winCondition[0]] == "O" &&
+      grid[winCondition[1]] == "O" &&
+      grid[winCondition[2]] == "O"){
+      oWinner = true;
+      alert("O WINS");
+        }
+  else {
+    alert("TIED")
+  };
+
+  //if grid[winCondition [0] & the other two] == the same thing, someone wins
+}
+// checking to see if player O is the winner
+
+// declaring a tie if neither is satisfied
+
+}
+
+
+
 // function determineWinner (){
-//   if (xPlay == winCombo[i])
-//     xWinner = true;} else if {
-//       (oPlay == winCombo[i])
-//     oWinner = true;}
-//     }
+//   if grid[0] == grid[1] && grid[2] == grid[3]) && (grid[0] == "X")) ||
+//      ((grid[0] == grid[3]) && (grid[3] == grid[6]) && (grid[0] == "X")) ||
+//      ((grid[0] == grid[4]) && (grid[4] == grid[8]) && (grid[0] == "X")) ||
+//      ((grid[1] == grid[4]) && (grid[4] == grid[7]) && (grid[1] == "X")) ||
+//      ((grid[2] == grid[4]) && (grid[4] == grid[6]) && (grid[2] == "X")) ||
+//      ((grid[2] == grid[5]) && (grid[5] == grid[8]) && (grid[2] == "X")) ||
+//      ((grid[3] == grid[4]) && (grid[4] == grid[5]) && (grid[3] == "X")) ||
+//      ((grid[6] == grid[7]) && (grid[7] == grid[8]) && (grid[6] == "X")) ||
+//    )
+//     xWinner = true;
+//     alert("X WINS");
+// } else {
+//   if ((grid[0] == grid[1]) && (grid[2] == grid[3]) && (grid[0] == "X")) ||;
+//      ((grid[0] == grid[3]) && (grid[3] == grid[6]) && (grid[0] == "X")) ||;
+//      ((grid[0] == grid[4]) && (grid[4] == grid[8]) && (grid[0] == "X")) ||;
+//      ((grid[1] == grid[4]) && (grid[4] == grid[7]) && (grid[1] == "X")) ||;
+//      ((grid[2] == grid[4]) && (grid[4] == grid[6]) && (grid[2] == "X")) ||;
+//      ((grid[2] == grid[5]) && (grid[5] == grid[8]) && (grid[2] == "X")) ||;
+//      ((grid[3] == grid[4]) && (grid[4] == grid[5]) && (grid[3] == "X")) ||;
+//      ((grid[6] == grid[7]) && (grid[7] == grid[8]) && (grid[6] == "X")) ||;
+//     )
+//     oWinner = true;
+//     alert("O WINS");
 // }

@@ -60,3 +60,12 @@ var filledGrid = 0;
   // var columnThree = [grid[2], grid[5], grid[8]];
   // var diagonalOne = [grid[0], grid[4], grid[8]];
   // var diagonalTwo = [grid[2], grid[4], grid[6]];
+
+  if ((grid[0] == grid[1] && grid[2] == grid[3] && (grid[0] == "X")) ||
+  if ((grid[0] == grid[3] && grid[3] == grid[6] && (grid[0] == "X")) ||
+  if ((grid[0] == grid[4] && grid[4] == grid[8] && (grid[0] == "X")) ||
+  if ((grid[1] == grid[4] && grid[4] == grid[7] && (grid[1] == "X")) ||
+  if ((grid[2] == grid[4] && grid[4] == grid[6] && (grid[2] == "X")) ||
+  if ((grid[2] == grid[5] && grid[5] == grid[8] && (grid[2] == "X")) ||
+  if ((grid[3] == grid[4] && grid[4] == grid[5] && (grid[3] == "X")) ||
+  if ((grid[6] == grid[7] && grid[7] == grid[8] && (grid[6] == "X")) ||
