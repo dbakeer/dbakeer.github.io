@@ -26,54 +26,72 @@ var xPlay = function xPlay () {
         playerXTurn = false;
         playerOTurn = true;
         gameDisplay();
+        gridFill();
+        determineWinner();
   });
   $("#one").click(function() {
       $("#one").text('X').html();
       playerXTurn = false;
       playerOTurn = true;
       gameDisplay();
+      gridFill();
+      determineWinner();
   });
   $("#two").click(function() {
       $("#two").text('X').html();
       playerXTurn = false;
       playerOTurn = true;
       gameDisplay();
+      gridFill();
+      determineWinner();
   });
   $("#three").click(function() {
       $("#three").text('X').html();
       playerXTurn = false;
       playerOTurn = true;
       gameDisplay();
+      gridFill();
+      determineWinner();
   });
   $("#four").click(function() {
       $("#four").text('X').html();
       playerXTurn = false;
       playerOTurn = true;
       gameDisplay();
+      gridFill();
+      determineWinner();
   });
   $("#five").click(function() {
       $("#five").text('X').html();
       playerXTurn = false;
       playerOTurn = true;
       gameDisplay();
+      gridFill();
+      determineWinner();
   });
   $("#six").click(function() {
       $("#six").text('X').html();
       playerXTurn = false;
       playerOTurn = true;
       gameDisplay();
+      gridFill();
+      determineWinner();
   });
   $("#seven").click(function() {
       $("#seven").text('X').html();
       playerXTurn = false;
       playerOTurn = true;
       gameDisplay();
+      gridFill();
+      determineWinner();
   });
   $("#eight").click(function() {
       $("#eight").text('X').html();
       playerXTurn = false;
       playerOTurn = true;
       gameDisplay();
+      gridFill();
+      determineWinner();
   });
 };
 
@@ -84,54 +102,72 @@ var oPlay = function oPlay () {
       playerXTurn = true;
       playerOTurn = false;
       gameDisplay();
+      gridFill();
+      determineWinner();
   });
   $("#one").click(function() {
       $("#one").text('O').html();
       playerXTurn = true;
       playerOTurn = false;
       gameDisplay();
+      gridFill();
+      determineWinner();
   });
   $("#two").click(function() {
       $("#two").text('O').html();
       playerXTurn = true;
       playerOTurn = false;
       gameDisplay();
+      gridFill();
+      determineWinner();
   });
   $("#three").click(function() {
       $("#three").text('O').html();
       playerXTurn = true;
       playerOTurn = false;
       gameDisplay();
+      gridFill();
+      determineWinner();
   });
   $("#four").click(function() {
       $("#four").text('O').html();
       playerXTurn = true;
       playerOTurn = false;
       gameDisplay();
+      gridFill();
+      determineWinner();
   });
   $("#five").click(function() {
       $("#five").text('O').html();
       playerXTurn = true;
       playerOTurn = false;
       gameDisplay();
+      gridFill();
+      determineWinner();
   });
   $("#six").click(function() {
       $("#six").text('O').html();
       playerXTurn = true;
       playerOTurn = false;
       gameDisplay();
+      gridFill();
+      determineWinner();
   });
   $("#seven").click(function() {
       $("#seven").text('O').html();
       playerXTurn = true;
       playerOTurn = false;
       gameDisplay();
+      gridFill();
+      determineWinner();
   });
   $("#eight").click(function() {
       $("#eight").text('O').html();
       playerXTurn = true;
       playerOTurn = false;
       gameDisplay();
+      gridFill();
+      determineWinner();
   });
 };
 
@@ -197,41 +233,7 @@ for (i = 0; i < winCombo.length; i++){
       alert("O WINS");
         }
   else {
-    alert("TIED")
-  };
-
-  //if grid[winCondition [0] & the other two] == the same thing, someone wins
+    alert("TIED");
+    }
+  }
 }
-// checking to see if player O is the winner
-
-// declaring a tie if neither is satisfied
-
-}
-
-
-
-// function determineWinner (){
-//   if grid[0] == grid[1] && grid[2] == grid[3]) && (grid[0] == "X")) ||
-//      ((grid[0] == grid[3]) && (grid[3] == grid[6]) && (grid[0] == "X")) ||
-//      ((grid[0] == grid[4]) && (grid[4] == grid[8]) && (grid[0] == "X")) ||
-//      ((grid[1] == grid[4]) && (grid[4] == grid[7]) && (grid[1] == "X")) ||
-//      ((grid[2] == grid[4]) && (grid[4] == grid[6]) && (grid[2] == "X")) ||
-//      ((grid[2] == grid[5]) && (grid[5] == grid[8]) && (grid[2] == "X")) ||
-//      ((grid[3] == grid[4]) && (grid[4] == grid[5]) && (grid[3] == "X")) ||
-//      ((grid[6] == grid[7]) && (grid[7] == grid[8]) && (grid[6] == "X")) ||
-//    )
-//     xWinner = true;
-//     alert("X WINS");
-// } else {
-//   if ((grid[0] == grid[1]) && (grid[2] == grid[3]) && (grid[0] == "X")) ||;
-//      ((grid[0] == grid[3]) && (grid[3] == grid[6]) && (grid[0] == "X")) ||;
-//      ((grid[0] == grid[4]) && (grid[4] == grid[8]) && (grid[0] == "X")) ||;
-//      ((grid[1] == grid[4]) && (grid[4] == grid[7]) && (grid[1] == "X")) ||;
-//      ((grid[2] == grid[4]) && (grid[4] == grid[6]) && (grid[2] == "X")) ||;
-//      ((grid[2] == grid[5]) && (grid[5] == grid[8]) && (grid[2] == "X")) ||;
-//      ((grid[3] == grid[4]) && (grid[4] == grid[5]) && (grid[3] == "X")) ||;
-//      ((grid[6] == grid[7]) && (grid[7] == grid[8]) && (grid[6] == "X")) ||;
-//     )
-//     oWinner = true;
-//     alert("O WINS");
-// }
