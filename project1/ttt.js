@@ -150,4 +150,27 @@ function gameDisplay () {
   }
 }
 
-// determine a winner
+// determine a if a grid is filled
+var grid = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+gridFill = function () {
+    grid[0] = $('#zero').innerHTML();
+    grid[1] = $('#one').innerHTML();
+    grid[2] = $('#two').innerHTML();
+    grid[3] = $('#three').innerHTML();
+    grid[4] = $('#four').innerHTML();
+    grid[5] = $('#five').innerHTML();
+    grid[6] = $('#six').innerHTML();
+    grid[7] = $('#seven').innerHTML();
+    grid[8] = $('#eight').innerHTML();
+};
+
+var winCombo = [
+  [grid[0], grid[1], grid[2]],
+  [grid[0], grid[3], grid[6]],
+  [grid[0], grid[4], grid[8]],
+  [grid[1], grid[4], grid[7]],
+  [grid[2], grid[4], grid[6]],
+  [grid[2], grid[5], grid[8]],
+  [grid[3], grid[4], grid[5]],
+  [grid[6], grid[7], grid[8]]
+];
