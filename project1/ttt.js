@@ -4,7 +4,7 @@ $(document).ready(
     // setting up information input for Player X
     var xName = prompt("Please enter your name", "Player X");
 
-    if (xName != null) {
+    if (xName !== null) {
         document.getElementById("playerXName").innerHTML = xName + "     using X's";
     }
   });
@@ -13,10 +13,11 @@ $(document).ready(
   function oInfo (){
     var oName = prompt("Please enter your name, Player O", "Player O");
 
-  if (oName != null) {
+  if (oName !== null) {
     document.getElementById("playerOName").innerHTML = oName + "     using O's";
   }
 
+  gameDisplay ();
 });
 
 
@@ -76,9 +77,10 @@ function xPlay () {
       playerOTurn = true;
       gameDisplay();
   });
+}
 
 // o's in the grid
-function OPlay () {
+function oPlay () {
   $("#zero").click(function() {
       $("#zero").text('O').html();
       playerXTurn = true;
@@ -133,14 +135,19 @@ function OPlay () {
       playerOTurn = false;
       gameDisplay();
   });
+}
 
 // takin' turns budday
 var playerXTurn = true;
 var playerOTurn = false;
 function gameDisplay () {
-  if (playerX){
+  if (playerXTurn){
      xPlay();
-  } else if (playerO) {
+     document.getElementById("playerTurn").innerHTML = "X Turn";
+  } else if (playerOTurn) {
      oPlay();
+      document.getElementById("playerTurn").innerHTML = "O Turn";
   }
-};
+}
+
+// determine a winner
