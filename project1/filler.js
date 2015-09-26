@@ -82,3 +82,64 @@
 //   }
 // });
 // };
+
+
+
+
+
+
+
+//Initializes Game
+
+
+
+
+
+// list out winning grid combinations in an array
+var winCombo = [
+  [0 , 1 , 2],
+  [0 , 3 , 6],
+  [0 , 4 , 8],
+  [1 , 4 , 7],
+  [2 , 4 , 6],
+  [2 , 5 , 8],
+  [3 , 4 , 5],
+  [6 , 7 , 8]
+];
+
+// determine the winner
+// xWinner = false;
+// oWinner = false;
+// function determineWinner (){
+//   if (xPlay == winCombo[i])
+//     xWinner = true;} else if {
+//       (oPlay == winCombo[i])
+//     oWinner = true;}
+//     }
+// }
+
+// determine a if a grid is filled
+var grid = [];
+var gridFill = function () {
+    grid[0] = $('#zero').html();
+    grid[1] = $('#one').html();
+    grid[2] = $('#two').html();
+    grid[3] = $('#three').html();
+    grid[4] = $('#four').html();
+    grid[5] = $('#five').html();
+    grid[6] = $('#six').html();
+    grid[7] = $('#seven').html();
+    grid[8] = $('#eight').html();
+};
+
+// list out winning grid combinations in an array
+var winCombo = [
+  [0 , 1 , 2],
+  [0 , 3 , 6],
+  [0 , 4 , 8],
+  [1 , 4 , 7],
+  [2 , 4 , 6],
+  [2 , 5 , 8],
+  [3 , 4 , 5],
+  [6 , 7 , 8]
+];

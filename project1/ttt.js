@@ -26,6 +26,7 @@ $(document).ready(
           playerXTurn = false;
           playerOTurn = true;
           gameDisplay();
+          gridFill();
           determineWinner();
     });
     $("#one").click(function() {
@@ -33,6 +34,7 @@ $(document).ready(
         playerXTurn = false;
         playerOTurn = true;
         gameDisplay();
+        gridFill();
         determineWinner();
     });
     $("#two").click(function() {
@@ -40,6 +42,7 @@ $(document).ready(
         playerXTurn = false;
         playerOTurn = true;
         gameDisplay();
+        gridFill();
         determineWinner();
     });
     $("#three").click(function() {
@@ -47,6 +50,7 @@ $(document).ready(
         playerXTurn = false;
         playerOTurn = true;
         gameDisplay();
+        gridFill();
         determineWinner();
     });
     $("#four").click(function() {
@@ -54,6 +58,7 @@ $(document).ready(
         playerXTurn = false;
         playerOTurn = true;
         gameDisplay();
+        gridFill();
         determineWinner();
     });
     $("#five").click(function() {
@@ -61,6 +66,7 @@ $(document).ready(
         playerXTurn = false;
         playerOTurn = true;
         gameDisplay();
+        gridFill();
         determineWinner();
     });
     $("#six").click(function() {
@@ -68,6 +74,7 @@ $(document).ready(
         playerXTurn = false;
         playerOTurn = true;
         gameDisplay();
+        gridFill();
         determineWinner();
     });
     $("#seven").click(function() {
@@ -75,6 +82,7 @@ $(document).ready(
         playerXTurn = false;
         playerOTurn = true;
         gameDisplay();
+        gridFill();
         determineWinner();
     });
     $("#eight").click(function() {
@@ -82,6 +90,7 @@ $(document).ready(
         playerXTurn = false;
         playerOTurn = true;
         gameDisplay();
+        gridFill();
         determineWinner();
     });
   };
@@ -93,6 +102,7 @@ $(document).ready(
         playerXTurn = true;
         playerOTurn = false;
         gameDisplay();
+        gridFill();
         determineWinner();
     });
     $("#one").click(function() {
@@ -100,6 +110,7 @@ $(document).ready(
         playerXTurn = true;
         playerOTurn = false;
         gameDisplay();
+        gridFill();
         determineWinner();
     });
     $("#two").click(function() {
@@ -107,6 +118,7 @@ $(document).ready(
         playerXTurn = true;
         playerOTurn = false;
         gameDisplay();
+        gridFill();
         determineWinner();
     });
     $("#three").click(function() {
@@ -114,6 +126,7 @@ $(document).ready(
         playerXTurn = true;
         playerOTurn = false;
         gameDisplay();
+        gridFill();
         determineWinner();
     });
     $("#four").click(function() {
@@ -121,6 +134,7 @@ $(document).ready(
         playerXTurn = true;
         playerOTurn = false;
         gameDisplay();
+        gridFill();
         determineWinner();
     });
     $("#five").click(function() {
@@ -128,6 +142,7 @@ $(document).ready(
         playerXTurn = true;
         playerOTurn = false;
         gameDisplay();
+        gridFill();
         determineWinner();
     });
     $("#six").click(function() {
@@ -135,6 +150,7 @@ $(document).ready(
         playerXTurn = true;
         playerOTurn = false;
         gameDisplay();
+        gridFill();
         determineWinner();
     });
     $("#seven").click(function() {
@@ -142,6 +158,7 @@ $(document).ready(
         playerXTurn = true;
         playerOTurn = false;
         gameDisplay();
+        gridFill();
         determineWinner();
     });
     $("#eight").click(function() {
@@ -149,6 +166,7 @@ $(document).ready(
         playerXTurn = true;
         playerOTurn = false;
         gameDisplay();
+        gridFill();
         determineWinner();
     });
   };
@@ -166,104 +184,63 @@ $(document).ready(
     }
   }
 
-  // piece of the game board
-var zero;
-var one;
-var two;
-var three;
-var four;
-var five;
-var six;
-var seven;
-var eight;
-// determine if the grid is filled or not
-function gridFill() {
-      zero = $('#zero').html();
-      one = $('#one').html();
-      two = $('#two').html();
-      three = $('#three').html();
-      four = $('#four').html();
-      five = $('#five').html();
-      six = $('#six').html();
-      seven = $('#seven').html();
-      eight = $('#eight').html();
-  }
+// determine a if a grid is filled
+  var grid = [];
+  var gridFill = function () {
+      grid[0] = $('#zero').html();
+      grid[1] = $('#one').html();
+      grid[2] = $('#two').html();
+      grid[3] = $('#three').html();
+      grid[4] = $('#four').html();
+      grid[5] = $('#five').html();
+      grid[6] = $('#six').html();
+      grid[7] = $('#seven').html();
+      grid[8] = $('#eight').html();
+  };
 
-// list out winning grid combinations in an array
-var winCombo = [
-  [zero, one, two],
-  [zero, three, six],
-  [zero, four, eight],
-  [one, four, seven],
-  [two, four, six],
-  [two, five, eight],
-  [three, four, five],
-  [six, seven, eight]
-];
+  // list out winning grid combinations in an array
+  var winCombo = [
+    [0 , 1 , 2],
+    [0 , 3 , 6],
+    [0 , 4 , 8],
+    [1 , 4 , 7],
+    [2 , 4 , 6],
+    [2 , 5 , 8],
+    [3 , 4 , 5],
+    [6 , 7 , 8]
+  ];
 
-// determine the winner
+
 xWinner = false;
 oWinner = false;
-function determineWinner () {
-  if ((zero == one && one == two && (zero == 'X')) ||
-  (zero == three && three == six && (zero == 'X')) ||
-  (zero == four && four == eight && (zero == 'X')) ||
-  (one == four && four == seven && (one == 'X')) ||
-  (two == four && four == six && (two == 'X')) ||
-  (two == five && five == eight && (two == 'X')) ||
-  (three == four && four == five && (three == 'X')) ||
-  (six == seven && seven == eight && (six == 'X'))){
-  xWinner = true;
-  announceWinner();
-} else if
-  ((zero == one && one == two && (zero == 'O')) ||
-  (zero == three && three == six && (zero == 'O')) ||
-  (zero == four && four == eight && (zero == 'O')) ||
-  (one == four && four == seven && (one == 'O')) ||
-  (two == four && four == six && (two == 'O')) ||
-  (two == five && five == eight && (two == 'O')) ||
-  (three == four && four == five && (three == 'O')) ||
-  (six == seven && seven == eight && (six == 'O')))
-  {
-  oWinner = true;
-  oWinner ();
-  }
-  else if
-  (((zero == 'X') || (zero == 'O')) &&
-  ((one == 'X') || (one == 'O')) &&
-  ((two == 'X') || (two == 'O')) &&
-  ((three == 'X') || (three == 'O')) &&
-  ((four == 'X') || (four == 'O')) &&
-  ((five == 'X') || (five == 'O')) &&
-  ((six == 'X') || (six == 'O')) &&
-  ((seven == 'X') || (seven == 'O')) &&
-  ((eight == 'X') || (eight == 'O')))
-  {
-     alert("DRAW");
+xAlert = false;
+oAlert = false;
+function determineWinner (){
+for (i = 0; i < winCombo.length; i++){
+  var winCondition = winCombo[i];
+  if (grid[winCondition[0]] == "X" &&
+      grid[winCondition[1]] == "X" &&
+      grid[winCondition[2]] == "X"){
+       xWinner = true;
+       oAlert = true;
+     }
+  else if (grid[winCondition[0]] == "O" &&
+      grid[winCondition[1]] == "O" &&
+      grid[winCondition[2]] == "O"){
+      oWinner = true;
+      oAlert = true;
+    }
   }
 }
 
-
-
-
-
-// for (i = 0; i < winCombo.length; i++){
-//
-//   var winCondition = winCombo[i];
-//   if (grid[winCondition[0]] == "X" &&
-//       grid[winCondition[1]] == "X" &&
-//       grid[winCondition[2]] == "X"){
-//        xWinner = true;
-//        alert("X WINS");
-//      }
-//   else if (grid[winCondition[0]] == "O" &&
-//       grid[winCondition[1]] == "O" &&
-//       grid[winCondition[2]] == "O"){
-//       oWinner = true;
-//       alert("O WINS");
-//         }
-//   else {
-//     alert("TIED");
-//     }
-//   }
-// }
+function announceWinner (){
+  if (xAlert === true){
+    alert("X WINS");
+    xAlert = false;
+  } else if
+    (oAlert === true){
+      alert("O WINS");
+      oAlert = false;
+    }
+  }
+}
