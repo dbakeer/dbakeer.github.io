@@ -177,46 +177,45 @@ var winCombo = [
 // determine the winner
 xWinner = false;
 oWinner = false;
-function determineWinner(){
-  if (grid[0] == grid[1] && grid[1] == grid[2] && (grid[0] == 'X')) ||
+function determineWinner () {
+
+  if ((grid[0] == grid[1] && grid[1] == grid[2] && (grid[0] == 'X')) ||
   (grid[0] == grid[3] && grid[3] == grid[6] && (grid[0] == 'X')) ||
   (grid[0] == grid[4] && grid[4] == grid[8] && (grid[0] == 'X')) ||
   (grid[1] == grid[4] && grid[4] == grid[7] && (grid[1] == 'X')) ||
   (grid[2] == grid[4] && grid[4] == grid[6] && (grid[2] == 'X')) ||
   (grid[2] == grid[5] && grid[5] == grid[8] && (grid[2] == 'X')) ||
   (grid[3] == grid[4] && grid[4] == grid[5] && (grid[3] == 'X')) ||
-  (grid[6] == grid[7] && grid[7] == grid[8] && (grid[6] == 'X')))
+  (grid[6] == grid[7] && grid[7] == grid[8] && (grid[6] == 'X'))){
+  xWin = true;
+  announceWinner();
+} else if
+  ((grid[0] == grid[1] && grid[1] == grid[2] && (grid[0] == 'O')) ||
+  (grid[0] == grid[3] && grid[3] == grid[6] && (grid[0] == 'O')) ||
+  (grid[0] == grid[4] && grid[4] == grid[8] && (grid[0] == 'O')) ||
+  (grid[1] == grid[4] && grid[4] == grid[7] && (grid[1] == 'O')) ||
+  (grid[2] == grid[4] && grid[4] == grid[6] && (grid[2] == 'O')) ||
+  (grid[2] == grid[5] && grid[5] == grid[8] && (grid[2] == 'O')) ||
+  (grid[3] == grid[4] && grid[4] == grid[5] && (grid[3] == 'O')) ||
+  (grid[6] == grid[7] && grid[7] == grid[8] && (grid[6] == 'O')))
   {
-    xWin = true;
-    announceWinner();
+  oWin = true;
+  oWinner ();
   }
-  else {
-    if (grid[0] == grid[1] && grid[1] == grid[2] && (grid[0] == 'O')) ||
-      (grid[0] == grid[3] && grid[3] == grid[6] && (grid[0] == 'O')) ||
-      (grid[0] == grid[4] && grid[4] == grid[8] && (grid[0] == 'O')) ||
-      (grid[1] == grid[4] && grid[4] == grid[7] && (grid[1] == 'O')) ||
-      (grid[2] == grid[4] && grid[4] == grid[6] && (grid[2] == 'O')) ||
-      (grid[2] == grid[5] && grid[5] == grid[8] && (grid[2] == 'O')) ||
-      (grid[3] == grid[4] && grid[4] == grid[5] && (grid[3] == 'O')) ||
-      (grid[6] == grid[7] && grid[7] == grid[8] && (grid[6] == 'O'))
-      {
-        oWin = true;
-        oWinner ();
-      } else if {
-         ((grid[0] == "x") || (grid[0] == "o")) &&
-         ((grid[1] == "x") || (grid[1] == "o")) &&
-         ((grid[2] == "x") || (grid[2] == "o")) &&
-         ((grid[3] == "x") || (grid[3] == "o")) &&
-         ((grid[4] == "x") || (grid[4] == "o")) &&
-         ((grid[5] == "x") || (grid[5] == "o")) &&
-         ((grid[6] == "x") || (grid[6] == "o")) &&
-         ((grid[7] == "x") || (grid[7] == "o")) &&
-         ((grid[8] == "x") || (grid[8] == "o"))) {
-            alert("DRAW");
-          }
-        }
-      }
-    };
+  else if
+  (((grid[0] == "x") || (grid[0] == "o")) &&
+  ((grid[1] == "x") || (grid[1] == "o")) &&
+  ((grid[2] == "x") || (grid[2] == "o")) &&
+  ((grid[3] == "x") || (grid[3] == "o")) &&
+  ((grid[4] == "x") || (grid[4] == "o")) &&
+  ((grid[5] == "x") || (grid[5] == "o")) &&
+  ((grid[6] == "x") || (grid[6] == "o")) &&
+  ((grid[7] == "x") || (grid[7] == "o")) &&
+  ((grid[8] == "x") || (grid[8] == "o")))
+  {
+     alert("DRAW");
+  }
+}
 
 
 
