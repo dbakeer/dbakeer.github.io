@@ -185,8 +185,8 @@ $(document).ready(
   }
 
 // determine a if a grid is filled
-  var grid = [];
-  var gridFill = function () {
+var grid = [];
+function gridFill () {
       grid[0] = $('#zero').html();
       grid[1] = $('#one').html();
       grid[2] = $('#two').html();
@@ -196,7 +196,7 @@ $(document).ready(
       grid[6] = $('#six').html();
       grid[7] = $('#seven').html();
       grid[8] = $('#eight').html();
-  };
+  }
 
   // list out winning grid combinations in an array
   var winCombo = [
@@ -222,25 +222,40 @@ for (i = 0; i < winCombo.length; i++){
       grid[winCondition[1]] == "X" &&
       grid[winCondition[2]] == "X"){
        xWinner = true;
-       oAlert = true;
+       announceWinner();
+       clearBoard();
+       gameDisplay();
      }
   else if (grid[winCondition[0]] == "O" &&
       grid[winCondition[1]] == "O" &&
       grid[winCondition[2]] == "O"){
       oWinner = true;
-      oAlert = true;
+      announceWinner();
+      clearBoard();
+      gameDisplay();
     }
   }
 }
 
 function announceWinner (){
-  if (xAlert === true){
+  if (xWinner === true){
     alert("X WINS");
     xAlert = false;
   } else if
-    (oAlert === true){
+    (oWinner === true){
       alert("O WINS");
       oAlert = false;
     }
   }
-}
+
+function clearBoard () {
+      grid[0] = $('#zero').html("");
+      grid[1] = $('#one').html("");
+      grid[2] = $('#two').html("");
+      grid[3] = $('#three').html("");
+      grid[4] = $('#four').html("");
+      grid[5] = $('#five').html("");
+      grid[6] = $('#six').html("");
+      grid[7] = $('#seven').html("");
+      grid[8] = $('#eight').html("");
+  }
