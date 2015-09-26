@@ -29,6 +29,7 @@ function gameDisplay (){
       document.getElementById("playerTurn").innerHTML = "O Turn";
       gridFill();
       determineWinner();
+      tiedGame();
       playerXTurn = false;
       playerOTurn = true;
     } else if (playerOTurn === true) {
@@ -36,6 +37,7 @@ function gameDisplay (){
       document.getElementById("playerTurn").innerHTML = "X Turn";
       gridFill();
       determineWinner();
+      tiedGame();
       playerXTurn = true;
       playerOTurn = false;
     }
@@ -43,7 +45,20 @@ function gameDisplay (){
 );}
 
 // determine a if a grid is filled
+var zero = $('#zero').html("");
+var one = $('#one').html("");
+var two = $('#two').html("");
+var three = $('#three').html("");
+var four = $('#four').html("");
+var five = $('#five').html("");
+var six = $('#six').html("");
+var seven = $('#seven').html("");
+var eight = $('#eight').html("");
+
+
 var grid = [];
+
+
 function gridFill () {
       grid[0] = $('#zero').html();
       grid[1] = $('#one').html();
@@ -71,6 +86,7 @@ function gridFill () {
 
 xWinner = false;
 oWinner = false;
+draw = false;
 function determineWinner (){
 for (i = 0; i < winCombo.length; i++){
   var winCondition = winCombo[i];
@@ -90,17 +106,50 @@ for (i = 0; i < winCombo.length; i++){
       clearBoard();
       gameDisplay();
     }
+    }
   }
+
+// determine a draw
+var draw = false;
+function tiedGame (){
+  if (
+    ((zero === " ") || (zero === " ")) &&
+    ((one === " ") || (one === " ")) &&
+    ((two === " ") || (two === " ")) &&
+    ((three === " ") || (three === " ")) &&
+    ((four === " ") || (four === " ")) &&
+    ((five === " ") || (five === " ")) &&
+    ((six === " ") || (six === " ")) &&
+    ((seven === " ") || (seven === " ")) &&
+    ((eight === " ") || (eight === " "))
+  );
+    draw = false;
+  }
+  if (
+    ((zero === "X") || (zero === "O")) &&
+    ((one === "X") || (one === "O")) &&
+    ((two === "X") || (two === "O")) &&
+    ((three === "X") || (three === "O")) &&
+    ((four === "X") || (four === "O")) &&
+    ((five === "X") || (five === "O")) &&
+    ((six === "X") || (six === "O")) &&
+    ((seven === "X") || (seven === "O")) &&
+    ((eight === "X") || (eight === "O"))
+  ); {
+  draw = true;
+
+  clearBoard();
 }
 
 function announceWinner (){
   if (xWinner === true){
     alert("X WINS");
-    xAlert = false;
   } else if
     (oWinner === true){
       alert("O WINS");
-      oAlert = false;
+    } else if
+    (draw === true){
+      alert("DRAW");
     }
   }
 
