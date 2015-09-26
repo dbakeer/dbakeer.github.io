@@ -20,7 +20,7 @@ $(document).ready(
   });
 
   // x's in the grid
-  var xPlay = function xPlay () {
+function xPlay () {
     $("#zero").click(function() {
         $("#zero").text('X').html();
           playerXTurn = false;
@@ -96,7 +96,7 @@ $(document).ready(
   };
 
   // o's in the grid
-  var oPlay = function oPlay () {
+function oPlay () {
     $("#zero").click(function() {
         $("#zero").text('O').html();
         playerXTurn = true;
@@ -213,8 +213,6 @@ function gridFill () {
 
 xWinner = false;
 oWinner = false;
-xAlert = false;
-oAlert = false;
 function determineWinner (){
 for (i = 0; i < winCombo.length; i++){
   var winCondition = winCombo[i];
