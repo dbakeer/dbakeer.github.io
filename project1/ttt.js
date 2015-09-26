@@ -26,54 +26,63 @@ $(document).ready(
           playerXTurn = false;
           playerOTurn = true;
           gameDisplay();
+          determineWinner();
     });
     $("#one").click(function() {
         $("#one").text('X').html();
         playerXTurn = false;
         playerOTurn = true;
         gameDisplay();
+        determineWinner();
     });
     $("#two").click(function() {
         $("#two").text('X').html();
         playerXTurn = false;
         playerOTurn = true;
         gameDisplay();
+        determineWinner();
     });
     $("#three").click(function() {
         $("#three").text('X').html();
         playerXTurn = false;
         playerOTurn = true;
         gameDisplay();
+        determineWinner();
     });
     $("#four").click(function() {
         $("#four").text('X').html();
         playerXTurn = false;
         playerOTurn = true;
         gameDisplay();
+        determineWinner();
     });
     $("#five").click(function() {
         $("#five").text('X').html();
         playerXTurn = false;
         playerOTurn = true;
         gameDisplay();
+        determineWinner();
     });
     $("#six").click(function() {
         $("#six").text('X').html();
         playerXTurn = false;
         playerOTurn = true;
         gameDisplay();
+        determineWinner();
     });
     $("#seven").click(function() {
         $("#seven").text('X').html();
         playerXTurn = false;
         playerOTurn = true;
         gameDisplay();
+        determineWinner();
     });
     $("#eight").click(function() {
         $("#eight").text('X').html();
         playerXTurn = false;
         playerOTurn = true;
         gameDisplay();
+        determineWinner();
     });
   };
 
@@ -84,54 +93,63 @@ $(document).ready(
         playerXTurn = true;
         playerOTurn = false;
         gameDisplay();
+        determineWinner();
     });
     $("#one").click(function() {
         $("#one").text('O').html();
         playerXTurn = true;
         playerOTurn = false;
         gameDisplay();
+        determineWinner();
     });
     $("#two").click(function() {
         $("#two").text('O').html();
         playerXTurn = true;
         playerOTurn = false;
         gameDisplay();
+        determineWinner();
     });
     $("#three").click(function() {
         $("#three").text('O').html();
         playerXTurn = true;
         playerOTurn = false;
         gameDisplay();
+        determineWinner();
     });
     $("#four").click(function() {
         $("#four").text('O').html();
         playerXTurn = true;
         playerOTurn = false;
         gameDisplay();
+        determineWinner();
     });
     $("#five").click(function() {
         $("#five").text('O').html();
         playerXTurn = true;
         playerOTurn = false;
         gameDisplay();
+        determineWinner();
     });
     $("#six").click(function() {
         $("#six").text('O').html();
         playerXTurn = true;
         playerOTurn = false;
         gameDisplay();
+        determineWinner();
     });
     $("#seven").click(function() {
         $("#seven").text('O').html();
         playerXTurn = true;
         playerOTurn = false;
         gameDisplay();
+        determineWinner();
     });
     $("#eight").click(function() {
         $("#eight").text('O').html();
         playerXTurn = true;
         playerOTurn = false;
         gameDisplay();
+        determineWinner();
     });
   };
 
@@ -148,70 +166,78 @@ $(document).ready(
     }
   }
 
-  // determine a if a grid is filled
-var grid = [];
+  // piece of the game board
+var zero;
+var one;
+var two;
+var three;
+var four;
+var five;
+var six;
+var seven;
+var eight;
+// determine if the grid is filled or not
 function gridFill() {
-      grid[0] = $('#zero').html();
-      grid[1] = $('#one').html();
-      grid[2] = $('#two').html();
-      grid[3] = $('#three').html();
-      grid[4] = $('#four').html();
-      grid[5] = $('#five').html();
-      grid[6] = $('#six').html();
-      grid[7] = $('#seven').html();
-      grid[8] = $('#eight').html();
+      zero = $('#zero').html();
+      one = $('#one').html();
+      two = $('#two').html();
+      three = $('#three').html();
+      four = $('#four').html();
+      five = $('#five').html();
+      six = $('#six').html();
+      seven = $('#seven').html();
+      eight = $('#eight').html();
   }
 
 // list out winning grid combinations in an array
 var winCombo = [
-  [grid[0] , grid[1] , grid[2]],
-  [grid[0] , grid[3] , grid[6]],
-  [grid[0] , grid[4] , grid[8]],
-  [grid[1] , grid[4] , grid[7]],
-  [grid[2] , grid[4] , grid[6]],
-  [grid[2] , grid[5] , grid[8]],
-  [grid[3] , grid[4] , grid[5]],
-  [grid[6] , grid[7] , grid[8]]
+  [zero, one, two],
+  [zero, three, six],
+  [zero, four, eight],
+  [one, four, seven],
+  [two, four, six],
+  [two, five, eight],
+  [three, four, five],
+  [six, seven, eight]
 ];
 
 // determine the winner
 xWinner = false;
 oWinner = false;
 function determineWinner () {
-
-  if ((grid[0] == grid[1] && grid[1] == grid[2] && (grid[0] == 'X')) ||
-  (grid[0] == grid[3] && grid[3] == grid[6] && (grid[0] == 'X')) ||
-  (grid[0] == grid[4] && grid[4] == grid[8] && (grid[0] == 'X')) ||
-  (grid[1] == grid[4] && grid[4] == grid[7] && (grid[1] == 'X')) ||
-  (grid[2] == grid[4] && grid[4] == grid[6] && (grid[2] == 'X')) ||
-  (grid[2] == grid[5] && grid[5] == grid[8] && (grid[2] == 'X')) ||
-  (grid[3] == grid[4] && grid[4] == grid[5] && (grid[3] == 'X')) ||
-  (grid[6] == grid[7] && grid[7] == grid[8] && (grid[6] == 'X'))){
-  xWin = true;
+  if ((zero == one && one == two && (zero == 'X')) ||
+  (zero == three && three == six && (zero == 'X')) ||
+  (zero == four && four == eight && (zero == 'X')) ||
+  (one == four && four == seven && (one == 'X')) ||
+  (two == four && four == six && (two == 'X')) ||
+  (two == five && five == eight && (two == 'X')) ||
+  (three == four && four == five && (three == 'X')) ||
+  (six == seven && seven == eight && (six == 'X'))){
+  xWinner = true;
   announceWinner();
 } else if
-  ((grid[0] == grid[1] && grid[1] == grid[2] && (grid[0] == 'O')) ||
-  (grid[0] == grid[3] && grid[3] == grid[6] && (grid[0] == 'O')) ||
-  (grid[0] == grid[4] && grid[4] == grid[8] && (grid[0] == 'O')) ||
-  (grid[1] == grid[4] && grid[4] == grid[7] && (grid[1] == 'O')) ||
-  (grid[2] == grid[4] && grid[4] == grid[6] && (grid[2] == 'O')) ||
-  (grid[2] == grid[5] && grid[5] == grid[8] && (grid[2] == 'O')) ||
-  (grid[3] == grid[4] && grid[4] == grid[5] && (grid[3] == 'O')) ||
-  (grid[6] == grid[7] && grid[7] == grid[8] && (grid[6] == 'O')))
+  ((zero == one && one == two && (zero == 'O')) ||
+  (zero == three && three == six && (zero == 'O')) ||
+  (zero == four && four == eight && (zero == 'O')) ||
+  (one == four && four == seven && (one == 'O')) ||
+  (two == four && four == six && (two == 'O')) ||
+  (two == five && five == eight && (two == 'O')) ||
+  (three == four && four == five && (three == 'O')) ||
+  (six == seven && seven == eight && (six == 'O')))
   {
-  oWin = true;
+  oWinner = true;
   oWinner ();
   }
   else if
-  (((grid[0] == "x") || (grid[0] == "o")) &&
-  ((grid[1] == "x") || (grid[1] == "o")) &&
-  ((grid[2] == "x") || (grid[2] == "o")) &&
-  ((grid[3] == "x") || (grid[3] == "o")) &&
-  ((grid[4] == "x") || (grid[4] == "o")) &&
-  ((grid[5] == "x") || (grid[5] == "o")) &&
-  ((grid[6] == "x") || (grid[6] == "o")) &&
-  ((grid[7] == "x") || (grid[7] == "o")) &&
-  ((grid[8] == "x") || (grid[8] == "o")))
+  (((zero == 'X') || (zero == 'O')) &&
+  ((one == 'X') || (one == 'O')) &&
+  ((two == 'X') || (two == 'O')) &&
+  ((three == 'X') || (three == 'O')) &&
+  ((four == 'X') || (four == 'O')) &&
+  ((five == 'X') || (five == 'O')) &&
+  ((six == 'X') || (six == 'O')) &&
+  ((seven == 'X') || (seven == 'O')) &&
+  ((eight == 'X') || (eight == 'O')))
   {
      alert("DRAW");
   }
