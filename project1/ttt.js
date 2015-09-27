@@ -82,14 +82,12 @@ for (i = 0; i < winCombo.length; i++){
       grid[winCondition[2]] == "X"){
        xWinner = true;
        announceWinner();
-       gameDisplay();
      }
   else if (grid[winCondition[0]] == "O" &&
       grid[winCondition[1]] == "O" &&
       grid[winCondition[2]] == "O"){
       oWinner = true;
       announceWinner();
-      gameDisplay();
     }
   }
 }
@@ -111,12 +109,6 @@ function tiedGame (){
   xWinner = false;
   draw = true;
   alert("DRAW");
-  xWin = xWin;
-  oLose = oLose;
-  xScore();
-  oScore();
-  clearBoard();
-  gameDisplay();
   }
 }
 
@@ -131,7 +123,6 @@ function announceWinner (){
     oLose = oLose + 1;
     xScore();
     oScore();
-    clearBoard();
   } else if
     (oWinner === true){
       alert("O WINS");
@@ -139,10 +130,12 @@ function announceWinner (){
       xLose = xLose + 1;
       xScore();
       oScore();
-      clearBoard();
     }
   }
 
+
+$(function (){
+  $("#reset").click(
 function clearBoard () {
       grid[0] = $('#zero').html("");
       grid[1] = $('#one').html("");
@@ -155,9 +148,10 @@ function clearBoard () {
       grid[8] = $('#eight').html("");
       xWinner = false;
       oWinner = false;
-      var playerXTurn = true;
-      var playerOTurn = false;
+      gameDisplay();
   }
+);
+});
 
 function oScore (){
   document.getElementById("xWin").innerHTML = "Wins:  " + xWin;
