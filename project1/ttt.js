@@ -117,12 +117,20 @@ function tiedGame (){
   }
 }
 
+xWin = 0;
+oWin = 0;
+xLose = 0;
+oLose = 0;
 function announceWinner (){
   if (xWinner === true){
     alert("X WINS");
+    xWin = xWin + 1;
+    oLose = oLose + 1;
   } else if
     (oWinner === true){
       alert("O WINS");
+      oWin = oWin + 1;
+      xLose = xLose + 1;
     }
   }
 
@@ -138,5 +146,6 @@ function clearBoard () {
       grid[8] = $('#eight').html("");
       xWinner = false;
       oWinner = false;
-      gameDisplay();
+      var playerXTurn = true;
+      var playerOTurn = false;
   }
