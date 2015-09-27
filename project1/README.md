@@ -6,9 +6,11 @@
 
 ##The Wireframe
 
-###Before beginning the actual coding of the project, I wrote down the entire wireframe and plan of attack for the project. I purposefully designed a very simplified HTML/CSS design and intended it to be clean and minimalist.
+###Before beginning the actual coding of the project, I wrote down the entire wireframe and plan of attack for the project. I purposefully designed a very simplified HTML/CSS design and intended it to be clean and minimalist considering that as a rookie developer with an arts background, I tend to focus on design over function and often have difficulty linking complex HTML/CSS to clean, functioning Javascript. Images of my notes are attached to this git.
 
+##The Process
 
+###After building a very basic HTML/CSS setup, leaving room for options for the Advanced buttons and features, I began the Javascript. I initially anticipated building 
 
 
 

@@ -5,12 +5,11 @@
 
 body {
   font-family: 'Marvel', sans-serif;
-  background: url("bg.png") no-repeat fixed;
-}
-
-img.bg {
-  min-height: 100%;
-  min-width: 100%;
+  background: url("bg.png") no-repeat center center fixed;
+    -webkit-background-size: cover; /* For WebKit*/
+    -moz-background-size: cover;    /* Mozilla*/
+    -o-background-size: cover;      /* Opera*/
+    background-size: cover;         /* Generic*/
 }
 
 h1 {
