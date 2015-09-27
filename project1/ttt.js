@@ -113,6 +113,7 @@ function tiedGame (){
   xWinner = false;
   draw = true;
   alert("DRAW");
+  clearBoard();
   }
 }
 
@@ -137,4 +138,5 @@ function clearBoard () {
       grid[8] = $('#eight').html("");
       xWinner = false;
       oWinner = false;
+      gameDisplay();
   }
