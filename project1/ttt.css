@@ -1,16 +1,23 @@
 * {
-  background: #F8F0DB;
+  /*background: #F8F0DB;*/
   text-align: center;
 }
 
 body {
   font-family: 'Marvel', sans-serif;
+  background: url("bg.png") no-repeat fixed;
+}
+
+img.bg {
+  min-height: 100%;
+  min-width: 100%;
 }
 
 h1 {
   font-size: 60px;
-  opacity: 0.4;
+  opacity: 0.5;
   margin: -20px 0 -20px 0;
+  color: #ffffff;
 
 }
 
@@ -22,6 +29,11 @@ hr {
   margin-bottom: 50px;
 }
 
+div {
+  background-color: #ffffff;
+  opacity: 0.8;
+}
+
 #gameboard {
   float: left;
   margin-top: -20px;
@@ -29,7 +41,7 @@ hr {
 
 .grid {
   display: inline-block;
-  margin-top: -25px;
+  margin-top: -20px;
   margin-right: -5px;
   vertical-align: top;
   font-family: 'Caveat Brush', cursive;
@@ -37,6 +49,8 @@ hr {
   text-align: center;
   border: 1px solid black;
   padding: 0 0 0 0;
+  height: 150px;
+  width: 150px;
 }
 
 #playerX {
@@ -60,52 +74,30 @@ hr {
 }
 
 #zero {
-  height: 150px;
-  width: 150px;
 }
 
 #one {
-  height: 150px;
-  width: 150px;
 }
 
 #two {
-  height: 150px;
-  width: 150px;
 }
 
 #three {
-  height: 150px;
-  width: 150px;
 }
 
 #four {
-  height: 150px;
-  width: 150px;
 }
 
 #five {
-  height: 150px;
-  width: 150px;
 }
 
 #six {
-  height: 150px;
-  width: 150px;
 }
 
 #seven {
-  height: 150px;
-  width: 150px;
 }
 
 #eight {
-  height: 150px;
-  width: 150px;
-}
-
-#turnBox {
-
 }
 
 #turnBox {
@@ -128,4 +120,8 @@ hr {
   padding: 5px 5px 5px 5px;
   margin-top: 20px;
 
+}
+
+button:focus {
+  outline:0 !important;
 }

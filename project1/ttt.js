@@ -20,26 +20,23 @@ $(document).ready(
   });
 
 // the metaphorical "brain" of the game
-var playerXTurn = true;
-var playerOTurn = false;
+var playerTurn = 0;
 function gameDisplay (){
   $("#zero, #one, #two, #three, #four, #five, #six, #seven, #eight").one("click", function(){
-    if (playerXTurn === true) {
+    if (playerTurn === 0) {
       $(this).text("X");
       document.getElementById("playerTurn").innerHTML = "O Turn";
       gridFill();
       determineWinner();
       tiedGame();
-      playerXTurn = false;
-      playerOTurn = true;
-    } else if (playerOTurn === true) {
+      playerTurn = 1;
+    } else if (playerTurn === 1) {
       $(this).text("O");
       document.getElementById("playerTurn").innerHTML = "X Turn";
       gridFill();
       determineWinner();
       tiedGame();
-      playerXTurn = true;
-      playerOTurn = false;
+      playerTurn = 0;
     }
   }
 );}
@@ -109,6 +106,10 @@ function tiedGame (){
   xWinner = false;
   draw = true;
   alert("DRAW");
+  oWin = oWin;
+  xLose = xLose;
+  xScore();
+  oScore();
   }
 }
 
