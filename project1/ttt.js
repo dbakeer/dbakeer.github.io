@@ -126,11 +126,15 @@ function announceWinner (){
     alert("X WINS");
     xWin = xWin + 1;
     oLose = oLose + 1;
+    xScore();
+    oScore();
   } else if
     (oWinner === true){
       alert("O WINS");
       oWin = oWin + 1;
       xLose = xLose + 1;
+      xScore();
+      oScore();
     }
   }
 
@@ -149,3 +153,13 @@ function clearBoard () {
       var playerXTurn = true;
       var playerOTurn = false;
   }
+
+function oScore (){
+  document.getElementById("xWin").innerHTML = "Wins:  " + xWin;
+  document.getElementById("xLoss").innerHTML = "Losses:  " + xLose;
+}
+
+function xScore (){
+  document.getElementById("oWin").innerHTML = "Wins:  " + oWin;
+  document.getElementById("oLoss").innerHTML = "Losses:  " + oLose;
+}
