@@ -82,7 +82,6 @@ for (i = 0; i < winCombo.length; i++){
       grid[winCondition[2]] == "X"){
        xWinner = true;
        announceWinner();
-       clearBoard();
        gameDisplay();
      }
   else if (grid[winCondition[0]] == "O" &&
@@ -90,7 +89,6 @@ for (i = 0; i < winCombo.length; i++){
       grid[winCondition[2]] == "O"){
       oWinner = true;
       announceWinner();
-      clearBoard();
       gameDisplay();
     }
   }
@@ -113,7 +111,12 @@ function tiedGame (){
   xWinner = false;
   draw = true;
   alert("DRAW");
+  xWin = xWin;
+  oLose = oLose;
+  xScore();
+  oScore();
   clearBoard();
+  gameDisplay();
   }
 }
 
@@ -128,6 +131,7 @@ function announceWinner (){
     oLose = oLose + 1;
     xScore();
     oScore();
+    clearBoard();
   } else if
     (oWinner === true){
       alert("O WINS");
@@ -135,6 +139,7 @@ function announceWinner (){
       xLose = xLose + 1;
       xScore();
       oScore();
+      clearBoard();
     }
   }
 
