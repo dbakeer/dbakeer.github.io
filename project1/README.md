@@ -58,9 +58,9 @@
 12. Every bug can be resolved. It may require restructuring your code or a simple mistake in your code.
 
 
-Sources:
-######Some CSS Help - https://css-tricks.com/examples/hrs/
-######Sleepy Totoro .gif - http://media.giphy.com/media/5GEs0boTNSb7y/giphy.gif
-######Background - http://www.bianoti.com/pixel-background-gif.html
-######Fonts - Google Fonts
-######Weekend Survival - Vodka & passive aggressive comments to my friends
+##Sources:
+- Some CSS Help - https://css-tricks.com/examples/hrs/
+- Sleepy Totoro .gif - http://media.giphy.com/media/5GEs0boTNSb7y/giphy.gif
+- Background - http://www.bianoti.com/pixel-background-gif.html
+- Fonts - Google Fonts
+- Weekend Survival - Vodka & passive aggressive whining to my friends
