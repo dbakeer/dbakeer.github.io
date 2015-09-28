@@ -91,7 +91,6 @@ for (i = 0; i < winCombo.length; i++){
 }
 
 // function to determine draws
-draw = false;
 function tiedGame (){
   if (
       ((grid[0] === "X") || (grid[0] === "O")) &&
@@ -111,6 +110,7 @@ xWin = 0;
 oWin = 0;
 xLose = 0;
 oLose = 0;
+draw = false;
 // determines what to do after a win, loss or draw is called
 function announceWinner (){
   if (xWinner === true){
@@ -152,7 +152,7 @@ function clearBoard () {
       xWinner = false;
       oWinner = false;
       draw = false;
-      playerTurn = true;
+      playerTurn === true;
       gameDisplay();
   }
 );
