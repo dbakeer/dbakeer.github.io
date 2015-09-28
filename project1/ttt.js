@@ -150,8 +150,8 @@ function clearBoard () {
       xWinner = false;
       oWinner = false;
       draw = false;
-      // playerTurn = true;
       gameDisplay();
+      playerTurn = true;
   }
 );
 });
