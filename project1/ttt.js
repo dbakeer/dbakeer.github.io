@@ -29,6 +29,7 @@ function gameDisplay (){
       gridFill();
       tiedGame();
       determineWinner();
+      announceWinner();
       playerTurn = false;
     } else if (playerTurn === false) {
       document.getElementById("playerTurn").innerHTML = "X Turn";
@@ -36,6 +37,7 @@ function gameDisplay (){
       gridFill();
       tiedGame();
       determineWinner();
+      announceWinner();
       playerTurn = true;
     }
   }
@@ -78,13 +80,11 @@ for (i = 0; i < winCombo.length; i++){
       grid[winCondition[1]] == "X" &&
       grid[winCondition[2]] == "X"){
        xWinner = true;
-       announceWinner();
      }
   else if (grid[winCondition[0]] == "O" &&
       grid[winCondition[1]] == "O" &&
       grid[winCondition[2]] == "O"){
       oWinner = true;
-      announceWinner();
     }
   }
 }
@@ -103,7 +103,6 @@ function tiedGame (){
       ((grid[8] === "X") || (grid[8] === "O"))
 ) {
   draw = true;
-  alert("DRAW");
   }}
 
 xWin = 0;
@@ -127,6 +126,7 @@ function announceWinner (){
       oScore();
     } else if
     (draw === true) {
+      alert("DRAW");
       oWin = oWin;
       xLose = xLose;
       xScore();
