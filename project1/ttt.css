@@ -99,7 +99,19 @@ button:focus {
 }
 
 #totoro{
-  margin-top: 200px;
+  margin-top: 25px;
   margin-right: 200px;
   z-index: 100;
+}
+
+#winAnnounce{
+  height: 50px;
+  width: 610px;
+  border: 1px solid black;
+  margin-left: 525px;
+  margin-top: 145px;
+}
+
+#gameStatus {
+  font-size: 50px;
 }

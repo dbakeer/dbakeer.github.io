@@ -1,5 +1,15 @@
 // FIRE DA LAZERZ
 
+// Global variables
+var grid = [];
+xWinner = false;
+oWinner = false;
+draw = false;
+xWin = 0;
+oWin = 0;
+xLose = 0;
+oLose = 0;
+
 // setting up information input for Player X
 $(document).ready(
   function xInfo() {
@@ -27,24 +37,23 @@ function gameDisplay (){
       document.getElementById("playerTurn").innerHTML = "O Turn";
       $(this).html("X");
       gridFill();
+      playerTurn = false;
       tiedGame();
       determineWinner();
       announceWinner();
-      playerTurn = false;
     } else if (playerTurn === false) {
       document.getElementById("playerTurn").innerHTML = "X Turn";
       $(this).html("O");
       gridFill();
+      playerTurn = true;
       tiedGame();
       determineWinner();
       announceWinner();
-      playerTurn = true;
     }
   }
 );}
 
 // determine a if a grid is filled
-var grid = [];
 function gridFill () {
       grid[0] = $('#zero').html();
       grid[1] = $('#one').html();
@@ -70,9 +79,7 @@ function gridFill () {
   ];
 
 
-xWinner = false;
-oWinner = false;
-draw = false;
+// determines if X or O wins
 function determineWinner (){
 for (i = 0; i < winCombo.length; i++){
   var winCondition = winCombo[i];
@@ -80,11 +87,13 @@ for (i = 0; i < winCombo.length; i++){
       grid[winCondition[1]] == "X" &&
       grid[winCondition[2]] == "X"){
        xWinner = true;
+       break;
      }
   else if (grid[winCondition[0]] == "O" &&
       grid[winCondition[1]] == "O" &&
       grid[winCondition[2]] == "O"){
       oWinner = true;
+      break;
     }
   }
 }
@@ -102,31 +111,37 @@ function tiedGame (){
       ((grid[7] === "X") || (grid[7] === "O")) &&
       ((grid[8] === "X") || (grid[8] === "O"))
 ) {
+  // alert("DRAW");
   draw = true;
   }}
 
-xWin = 0;
-oWin = 0;
-xLose = 0;
-oLose = 0;
-draw = false;
+// determines what to do after a win, loss or draw is called
 function announceWinner (){
   if (xWinner === true){
-    alert("X WINS");
+    document.getElementById("gameStatus").innerHTML = "X Wins!";
+    xWinner = false;
+    oWinner = false;
+    draw = false;
     xWin = xWin + 1;
     oLose = oLose + 1;
     xScore();
     oScore();
   } else if
     (oWinner === true){
-      alert("O WINS");
+      document.getElementById("gameStatus").innerHTML = "O Wins!";
+      xWinner = false;
+      oWinner = false;
+      draw = false;
       oWin = oWin + 1;
       xLose = xLose + 1;
       xScore();
       oScore();
     } else if
     (draw === true) {
-      alert("DRAW");
+      document.getElementById("gameStatus").innerHTML = "Draw!";
+      xWinner = false;
+      oWinner = false;
+      draw = false;
       oWin = oWin;
       xLose = xLose;
       xScore();
@@ -134,7 +149,7 @@ function announceWinner (){
     }
   }
 
-
+// syncs with the reset button to clear the board
 $(function (){
   $("#reset").click(
 function clearBoard () {
@@ -150,17 +165,19 @@ function clearBoard () {
       xWinner = false;
       oWinner = false;
       draw = false;
-      playerTurn = true;
+      document.getElementById("gameStatus").innerHTML = "";
       gameDisplay();
   }
 );
 });
 
+// keeps track of O's score
 function oScore (){
   document.getElementById("xWin").innerHTML = "Wins:  " + xWin;
   document.getElementById("xLoss").innerHTML = "Losses:  " + xLose;
 }
 
+// keeps track of X's score
 function xScore (){
   document.getElementById("oWin").innerHTML = "Wins:  " + oWin;
   document.getElementById("oLoss").innerHTML = "Losses:  " + oLose;
