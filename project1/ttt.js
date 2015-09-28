@@ -24,18 +24,18 @@ function gameDisplay (){
   var playerTurn = true;
   $("#zero, #one, #two, #three, #four, #five, #six, #seven, #eight").one("click", function(){
     if (playerTurn === true) {
-      $(this).html("X");
       document.getElementById("playerTurn").innerHTML = "O Turn";
+      $(this).html("X");
       gridFill();
-      determineWinner();
       tiedGame();
+      determineWinner();
       playerTurn = false;
     } else if (playerTurn === false) {
-      $(this).html("O");
       document.getElementById("playerTurn").innerHTML = "X Turn";
+      $(this).html("O");
       gridFill();
-      determineWinner();
       tiedGame();
+      determineWinner();
       playerTurn = true;
     }
   }
@@ -104,6 +104,8 @@ function tiedGame (){
 ) {
   draw = true;
   alert("DRAW");
+  xScore();
+  oScore();
   }}
 
 xWin = 0;
@@ -126,12 +128,6 @@ function announceWinner (){
       xScore();
       oScore();
     }
-    else if
-    (draw === true){
-    alert("DRAW");
-    xScore();
-    oScore();
-    }
   }
 
 
@@ -150,8 +146,8 @@ function clearBoard () {
       xWinner = false;
       oWinner = false;
       draw = false;
-      gameDisplay();
       playerTurn = true;
+      gameDisplay();
   }
 );
 });
