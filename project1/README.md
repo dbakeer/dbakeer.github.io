@@ -55,6 +55,8 @@
 
 11. HTML/CSS styling goes a long way in making your project look a lot cuter. Use it to mask your rookie status :)
 
+12. Every bug can be resolved. It may require restructuring your code or a simple mistake in your code.
+
 
 Sources:
 ######Some CSS Help - https://css-tricks.com/examples/hrs/
