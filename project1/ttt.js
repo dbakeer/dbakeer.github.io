@@ -91,6 +91,7 @@ for (i = 0; i < winCombo.length; i++){
 }
 
 // function to determine draws
+draw = false;
 function tiedGame (){
   if (
       ((grid[0] === "X") || (grid[0] === "O")) &&
@@ -104,13 +105,13 @@ function tiedGame (){
       ((grid[8] === "X") || (grid[8] === "O"))
 ) {
   draw = true;
+  alert("DRAW");
   }}
 
 xWin = 0;
 oWin = 0;
 xLose = 0;
 oLose = 0;
-draw = false;
 // determines what to do after a win, loss or draw is called
 function announceWinner (){
   if (xWinner === true){
@@ -128,7 +129,6 @@ function announceWinner (){
       oScore();
     } else if
     (draw === true) {
-      alert("DRAW");
       oWin = oWin;
       xLose = xLose;
       xScore();
