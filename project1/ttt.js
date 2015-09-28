@@ -166,6 +166,7 @@ function clearBoard () {
       oWinner = false;
       draw = false;
       document.getElementById("gameStatus").innerHTML = "";
+      document.getElementById("playerTurn").innerHTML = "";
       gameDisplay();
   }
 );
