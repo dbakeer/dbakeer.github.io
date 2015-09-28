@@ -150,7 +150,7 @@ function clearBoard () {
       xWinner = false;
       oWinner = false;
       draw = false;
-      playerTurn = true;
+      // playerTurn = true;
       gameDisplay();
   }
 );
