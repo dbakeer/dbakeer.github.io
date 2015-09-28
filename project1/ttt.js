@@ -103,12 +103,14 @@ function tiedGame (){
       ((grid[8] === "X") || (grid[8] === "O"))
 ) {
   draw = true;
+  alert("DRAW");
   }}
 
 xWin = 0;
 oWin = 0;
 xLose = 0;
 oLose = 0;
+draw = false;
 function announceWinner (){
   if (xWinner === true){
     alert("X WINS");
@@ -148,6 +150,7 @@ function clearBoard () {
       xWinner = false;
       oWinner = false;
       draw = false;
+      playerTurn = true;
       gameDisplay();
   }
 );
