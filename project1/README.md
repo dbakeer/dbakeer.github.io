@@ -1,20 +1,20 @@
 ##Introduction
 
-######The process of making this game was a great experience in that it taught me the necessary process to make native code, the logic of organization and the means to make a basic working game.
+- The process of making this game was a great experience in that it taught me the necessary process to make native code, the logic of organization and the means to make a basic working game.
 
-#####As simple as Tic Tac Toe may seem, it was a learning process. There could have been simpler ways to do this, but I am glad I explored the longer route as it helped me flex and develop coding skills.
+- As simple as Tic Tac Toe may seem, it was a learning process. There could have been simpler ways to do this, but I am glad I explored the longer route as it helped me flex and develop coding skills.
 
 ##The Wireframe
 
-######Before beginning the actual coding of the project, I wrote down the entire wireframe and plan of attack for the project. I purposefully designed a very simplified HTML/CSS design and intended it to be clean and minimalist considering that as a rookie developer with an arts background, I tend to focus on design over function and often have difficulty linking complex HTML/CSS to clean, functioning Javascript. Images of my notes are attached to this git. (I can attach the physical notes I wrote accordingly if desired; I am fairly proud of my written tactic.)
+- Before beginning the actual coding of the project, I wrote down the entire wireframe and plan of attack for the project. I purposefully designed a very simplified HTML/CSS design and intended it to be clean and minimalist considering that as a rookie developer with an arts background, I tend to focus on design over function and often have difficulty linking complex HTML/CSS to clean, functioning Javascript. Images of my notes are attached to this git. (I can attach the physical notes I wrote accordingly if desired; I am fairly proud of my written tactic.)
 
 ##The Process
 
-######First, I wrote out my plan of attack including global variables, needed functions and a solid build of the grid with the winning combinations written out. Once I had all of this, I approached my computer and began.
+- First, I wrote out my plan of attack including global variables, needed functions and a solid build of the grid with the winning combinations written out. Once I had all of this, I approached my computer and began.
 
-######After building a very basic HTML/CSS setup, leaving room for options for the Advanced buttons and features, I began the Javascript. I initially anticipated building an array for the winning combinations. I originally hardcoded the build but this proved 1) tedious and 2) it just didn't work. With the advice of my colleague, Finn Borge, I set up a for loop for the winning and losing combinations. Unfortunately, the draw combination had to be hardcoded or the for loop would automatically assume there was a Draw every single turn. Frustrating, but valuable.
+- After building a very basic HTML/CSS setup, leaving room for options for the Advanced buttons and features, I began the Javascript. I initially anticipated building an array for the winning combinations. I originally hardcoded the build but this proved 1) tedious and 2) it just didn't work. With the advice of my colleague, Finn Borge, I set up a for loop for the winning and losing combinations. Unfortunately, the draw combination had to be hardcoded or the for loop would automatically assume there was a Draw every single turn. Frustrating, but valuable.
 
-######From there, I tinkered with random bugs and adjusted my global variables.
+- From there, I tinkered with random bugs and adjusted my global variables.
 
 ##The Good
 
