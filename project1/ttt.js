@@ -104,8 +104,6 @@ function tiedGame (){
 ) {
   draw = true;
   alert("DRAW");
-  xScore();
-  oScore();
   }}
 
 xWin = 0;
@@ -125,6 +123,12 @@ function announceWinner (){
       alert("O WINS");
       oWin = oWin + 1;
       xLose = xLose + 1;
+      xScore();
+      oScore();
+    } else if
+    (draw === true) {
+      oWin = oWin;
+      xLose = xLose;
       xScore();
       oScore();
     }
