@@ -1,5 +1,16 @@
 // FIRE DA LAZERZ
 
+// GLOBAL VARIABLES
+var playerTurn = false; // toggles between 0 and 1 depending on the player
+var grid = []; // the empty grid setup
+var xWinner = false; // if X is the winner
+var oWinner = false; // if O is the winner
+var draw = false; // if there is a draw
+var xWin = 0; // how many wins X has
+var oWin = 0; // how many wins O has
+var xLose = 0; // how many losses X has
+var oLose = 0; // how many losses O has
+
 // setting up information input for Player X
 $(document).ready(
   function xInfo() {
@@ -20,29 +31,29 @@ $(document).ready(
   });
 
 // the metaphorical "brain" of the game
-var playerTurn = 0;
 function gameDisplay (){
   $("#zero, #one, #two, #three, #four, #five, #six, #seven, #eight").one("click", function(){
-    if (playerTurn === 0) {
+    if (playerTurn === false) {
       $(this).text("X");
       document.getElementById("playerTurn").innerHTML = "O Turn";
       gridFill();
       determineWinner();
       tiedGame();
-      playerTurn = 1;
-    } else if (playerTurn === 1) {
+      announceWinner();
+      playerTurn = true;
+    } else if (playerTurn === true) {
       $(this).text("O");
       document.getElementById("playerTurn").innerHTML = "X Turn";
       gridFill();
       determineWinner();
       tiedGame();
-      playerTurn = 0;
+      announceWinner();
+      playerTurn = false;
     }
   }
 );}
 
 // determine a if a grid is filled
-var grid = [];
 function gridFill () {
       grid[0] = $('#zero').html();
       grid[1] = $('#one').html();
@@ -68,9 +79,7 @@ function gridFill () {
   ];
 
 
-xWinner = false;
-oWinner = false;
-draw = false;
+// determine if a player wins or loses
 function determineWinner (){
 for (i = 0; i < winCombo.length; i++){
   var winCondition = winCombo[i];
@@ -78,13 +87,11 @@ for (i = 0; i < winCombo.length; i++){
       grid[winCondition[1]] == "X" &&
       grid[winCondition[2]] == "X"){
        xWinner = true;
-       announceWinner();
      }
   else if (grid[winCondition[0]] == "O" &&
       grid[winCondition[1]] == "O" &&
       grid[winCondition[2]] == "O"){
       oWinner = true;
-      announceWinner();
     }
   }
 }
@@ -105,18 +112,10 @@ function tiedGame (){
   oWinner = false;
   xWinner = false;
   draw = true;
-  alert("DRAW");
-  oWin = oWin;
-  xLose = xLose;
-  xScore();
-  oScore();
   }
 }
 
-xWin = 0;
-oWin = 0;
-xLose = 0;
-oLose = 0;
+// alert the players who won
 function announceWinner (){
   if (xWinner === true){
     alert("X WINS");
@@ -129,6 +128,12 @@ function announceWinner (){
       alert("O WINS");
       oWin = oWin + 1;
       xLose = xLose + 1;
+      xScore();
+      oScore();
+    } else if (draw === true){
+      alert("DRAW");
+      oWin = oWin;
+      xLose = xLose;
       xScore();
       oScore();
     }
@@ -149,9 +154,10 @@ function clearBoard () {
       grid[8] = $('#eight').html("");
       xWinner = false;
       oWinner = false;
+      draw = false;
+      playerTurn = false;
       gameDisplay();
-  }
-);
+  });
 });
 
 function oScore (){
