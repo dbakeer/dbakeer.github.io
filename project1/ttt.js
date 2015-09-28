@@ -70,7 +70,6 @@ function gridFill () {
   ];
 
 
-// determines if X or O wins
 xWinner = false;
 oWinner = false;
 draw = false;
@@ -111,7 +110,6 @@ oWin = 0;
 xLose = 0;
 oLose = 0;
 draw = false;
-// determines what to do after a win, loss or draw is called
 function announceWinner (){
   if (xWinner === true){
     alert("X WINS");
@@ -136,7 +134,7 @@ function announceWinner (){
     }
   }
 
-// syncs with the reset button to clear the board
+
 $(function (){
   $("#reset").click(
 function clearBoard () {
@@ -152,19 +150,17 @@ function clearBoard () {
       xWinner = false;
       oWinner = false;
       draw = false;
-      playerTurn === true;
+      playerTurn = true;
       gameDisplay();
   }
 );
 });
 
-// keeps track of O's score
 function oScore (){
   document.getElementById("xWin").innerHTML = "Wins:  " + xWin;
   document.getElementById("xLoss").innerHTML = "Losses:  " + xLose;
 }
 
-// keeps track of X's score
 function xScore (){
   document.getElementById("oWin").innerHTML = "Wins:  " + oWin;
   document.getElementById("oLoss").innerHTML = "Losses:  " + oLose;
