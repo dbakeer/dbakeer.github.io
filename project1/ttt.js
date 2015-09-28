@@ -20,26 +20,23 @@ $(document).ready(
   });
 
 // the metaphorical "brain" of the game
-var playerXTurn = true;
-var playerOTurn = false;
 function gameDisplay (){
+  var playerTurn = true;
   $("#zero, #one, #two, #three, #four, #five, #six, #seven, #eight").one("click", function(){
-    if (playerXTurn === true) {
-      $(this).text("X");
+    if (playerTurn === true) {
+      $(this).html("X");
       document.getElementById("playerTurn").innerHTML = "O Turn";
       gridFill();
       determineWinner();
       tiedGame();
-      playerXTurn = false;
-      playerOTurn = true;
-    } else if (playerOTurn === true) {
-      $(this).text("O");
+      playerTurn = false;
+    } else if (playerTurn === false) {
+      $(this).html("O");
       document.getElementById("playerTurn").innerHTML = "X Turn";
       gridFill();
       determineWinner();
       tiedGame();
-      playerXTurn = true;
-      playerOTurn = false;
+      playerTurn = true;
     }
   }
 );}
@@ -105,12 +102,8 @@ function tiedGame (){
       ((grid[7] === "X") || (grid[7] === "O")) &&
       ((grid[8] === "X") || (grid[8] === "O"))
 ) {
-  oWinner = false;
-  xWinner = false;
   draw = true;
-  alert("DRAW");
-  }
-}
+  }}
 
 xWin = 0;
 oWin = 0;
@@ -131,6 +124,12 @@ function announceWinner (){
       xScore();
       oScore();
     }
+    else if
+    (draw === true){
+    alert("DRAW");
+    xScore();
+    oScore();
+    }
   }
 
 
@@ -148,7 +147,7 @@ function clearBoard () {
       grid[8] = $('#eight').html("");
       xWinner = false;
       oWinner = false;
-      draw = false; 
+      draw = false;
       gameDisplay();
   }
 );
