@@ -148,7 +148,7 @@ function clearBoard () {
       grid[8] = $('#eight').html("");
       xWinner = false;
       oWinner = false;
-      draw = false;
+      draw = false; 
       gameDisplay();
   }
 );
