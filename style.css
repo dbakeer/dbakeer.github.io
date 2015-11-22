@@ -1,0 +1,65 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#logo {
+  font-family: 'Press Start 2P', cursive;
+}
+
+nav {
+  position: fixed;
+  background-color: white;
+  text-align: center;
+  height: 80px;
+  top: 0;
+  transition: .2s;
+  width: 100%;
+  padding: 30px;
+}
+
+#second {
+  padding: 100px;
+  text-align: center;
+}
+
+#second p {
+  padding: 30px;
+  line-height: 1.8;
+}
+
+.nav-up {
+  opacity: 0;
+  top: -80px;
+  /*-80 because height is 80px*/
+}
+
+.photo {
+  width: 100%;
+}
+
+#nav {
+  float: right;
+}
+
+#navlink {
+  display: inline;
+  color: black;
+  margin-right: 20px;
+}
+
+#navlink a:hover {
+  cursor: pointer;
+  border-bottom: 1px solid black;
+  padding-bottom: 8px;
+}
+
+#logo {
+  float: left;
+}
+
+#logo h3 {
+  color: black;
+  margin-top: -3px;
+}
