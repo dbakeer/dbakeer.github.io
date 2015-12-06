@@ -28,15 +28,11 @@ nav {
 .nav-up {
   opacity: 0;
   top: -80px;
-  /*-80 because height is 80px*/
-}
-
-.photo {
-  width: 100%;
 }
 
 #nav {
   float: right;
+  margin-bottom: 10%;
 }
 
 #navlink {
@@ -70,14 +66,109 @@ h3 {
   height: 100px;
 }
 
-img#projectlist {
-  filter: url(filters.svg#grayscale);
-  filter: gray;
-  -webkit-filter: grayscale(1);
-  -webkit-transition: all .5s ease-in-out;
+
+
+ul.img-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 24px;
 }
 
-img#projectlist:hover {
-  filter: none;
-  -webkit-filter: grayscale(0);
+ul.img-list li {
+  display: inline-block;
+  height: 100px;
+  width: 400px;
+  margin: 0 1em 1em 0;
+  position: relative;
+}
+
+span.projectDescription {
+  background: rgba(0,0,0,0.5);
+  color: white;
+  cursor: pointer;
+  display: table;
+  height: 100px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 400px;
+  opacity: 0;
+  -webkit-transition: opacity 500ms;
+  -moz-transition: opacity 500ms;
+  -o-transition: opacity 500ms;
+  transition: opacity 500ms;
+}
+
+span.projectDescription span {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+ul.img-list li:hover span.projectDescription {
+  opacity: 1;
+}
+
+#projects {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 18px;
+}
+
+#projecttitle {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 24px;
+}
+
+#projectmain a {
+  display: inline;
+  color: black;
+  font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+#projectmain p {
+  font-size: 24px;
+}
+
+#projectimg {
+  float: right;
+  height: 600px;
+  width: 600px;
+  margin: -5% 10% 5% 0;
+  border: 1px black solid;
+  border-radius: 5%;
+}
+
+#technologies {
+  float: left;
+  margin: -5% 0 0 10%;
+  width: 30%;
+}
+
+#projectdesc {
+  float: left;
+  margin: 0 0 0 10%;
+  width: 30%;
+}
+
+#projectdesc span {
+  text-align: center;
+}
+
+#technologies ul {
+  list-style-type: none;
+  font-size: 18px;
+  padding: 2%;
+}
+
+#projectmain {
+  padding: 100px;
+  text-align: center;
+}
+
+#projectspan p {
+  margin: 1% 0 1% 1%;
 }
