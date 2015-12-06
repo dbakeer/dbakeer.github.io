@@ -16,7 +16,7 @@ nav {
 }
 
 #second {
-  padding: 100px;
+  padding: 100px 0 0 0;
   text-align: center;
 }
 
@@ -65,8 +65,6 @@ h3 {
   width: 400px;
   height: 100px;
 }
-
-
 
 ul.img-list {
   list-style-type: none;
@@ -171,4 +169,10 @@ ul.img-list li:hover span.projectDescription {
 
 #projectspan p {
   margin: 1% 0 1% 1%;
+}
+
+#me {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
 }
