@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-#logo {
-  font-family: 'Press Start 2P', cursive;
-}
-
 nav {
   position: fixed;
   background-color: white;
@@ -57,9 +53,31 @@ nav {
 
 #logo {
   float: left;
+  font-family: 'Press Start 2P', cursive;
 }
 
 #logo h3 {
   color: black;
   margin-top: -3px;
+}
+
+h3 {
+  font-family: 'Press Start 2P', cursive;
+}
+
+#projectlist {
+  width: 400px;
+  height: 100px;
+}
+
+img#projectlist {
+  filter: url(filters.svg#grayscale);
+  filter: gray;
+  -webkit-filter: grayscale(1);
+  -webkit-transition: all .5s ease-in-out;
+}
+
+img#projectlist:hover {
+  filter: none;
+  -webkit-filter: grayscale(0);
 }
