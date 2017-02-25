@@ -9,6 +9,16 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
+    <script src="./assets/js/typed.js"></script>
+    <script>
+    $(function(){
+        $(".element").typed({
+          strings: ["Hello, my name is Dinah Bakeer.", "I am a web developer and copywriter.", "Thank you so much for visiting, and have an amazing day!"],
+          typeSpeed: 0
+        });
+      });
+    </script>
+
     <script src="script.js"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
@@ -32,7 +42,8 @@
     </nav>
 
     <div id="second">
-      <p>For web development or copywriting inquiries, please e-mail me at: <a id="navlink" href="mailto:dinah.bakeer@gmail.com">dinah.bakeer@gmail.com</a></p>
+      <div class="element"></div>
+      <p>RE: inquiries, please e-mail me at: <a id="navlink" href="mailto:dinah.bakeer@gmail.com">dinah.bakeer@gmail.com</a></p>
       <p>Thank you!</p>
     </p>
 
