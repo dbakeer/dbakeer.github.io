@@ -718,3 +718,15 @@ main {
 }
 
 .db__title--main { font-family:'Press Start 2P'; font-size:2rem; margin-bottom:2rem !important; }
+
+.content-margin { margin-bottom:2rem; }
+
+.margin-right {
+    &__small { margin-right:1rem; }
+    &__medium { margin-right:2rem; }
+}
+
+.social-links { background:black; padding:1rem; display:flex; align-items:center; justify-content:space-between;
+    &:hover { background:white; }
+    a:hover { color:black; }
+}

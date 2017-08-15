@@ -625,3 +625,23 @@ main {
   font-family: 'Press Start 2P';
   font-size: 2rem;
   margin-bottom: 2rem !important; }
+
+.content-margin {
+  margin-bottom: 2rem; }
+
+.margin-right__small {
+  margin-right: 1rem; }
+
+.margin-right__medium {
+  margin-right: 2rem; }
+
+.social-links {
+  background: black;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  .social-links:hover {
+    background: white; }
+  .social-links a:hover {
+    color: black; }
