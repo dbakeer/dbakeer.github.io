@@ -12,8 +12,10 @@
 		<link rel="stylesheet" type="text/css" href="assets/style/normalize.css" />
         <link rel="stylesheet" type="text/css" href="assets/style/style.css" />
 		<script>document.documentElement.className = 'js';</script>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+		<script src="assets/js/app.js"></script>
 	</head>
-	<body class="demo-4 loading">
+	<body class="db-home loading">
 		<svg class="hidden">
 			<symbol id="icon-arrow" viewBox="0 0 24 24">
 				<polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 "/>
@@ -22,14 +24,14 @@
 				<path d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z"/><path d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z"/>
 			</symbol>
 		</svg>
-		<main>
+		<main id="main" class="inactive">
 			<div class="content content--intro">
 				<div class="content__inner">
                     <div class="db-title">
-                        <h2 class="content__title">Dinah Bakeer</h2>
+                        <h1 class="content__title">Dinah Bakeer</h1>
                     </div>
 					<h3>Web Developer | Writer</h3>
-					<a href="#" class="enter">See More</a>
+					<a href="#" id="cover-click" class="enter">See More</a>
 				</div>
 				<div class="shape-wrap">
 					<svg class="shape" width="100%" height="100vh" preserveAspectRatio="none" viewBox="0 0 1440 800" xmlns:pathdata="http://www.codrops.com/">
@@ -39,33 +41,56 @@
 			</div>
 			<div class="content content--fixed">
 				<div class="content__inner">
-					<!-- <h2 class="content__title content__title--filled db__title--main">Dinah Bakeer</h2> -->
-                    <h2 class="content__title db__title--main">Dinah Bakeer</h2>
-					<div class="explore content-margin">
-						<div>Portfolio & Information</div>
-						<div>Coming Soon</div>
+					<div id="main-content">
+						<div class="grid">
+							<div class="overlay text-center">
+								<h2>About</h2>
+								<p>Dinah Bakeer was born in New Orleans, Louisiana. She spent her formative years making websites on a dubious Dial-Up connection. As technology progressed and she explored the world, she eventually found that web development can be a creative field, and since then pursued it relentlessly. She moonlights as a writer (published in <i>Missbehave Magazine</i> and <i>Thrillist</i>), painted faces on movie sets and editorial in New Orleans, and retired her wrestling boots. You may now find her trying to finish <i>Seiken Densetsu 3</i>.</p>
+							</div>
+						</div>
+						<div class="grid">
+							<div class="overlay text-center">
+								<h2>Projects</h2>
+								<p>Tea India (Coming Soon)</p>
+								<p>American Underground (Coming Soon)</p>
+								<p>Airplantman (Current Project)</p>
+								<p><a href="http://theklog.co" target="_blank">The Klog</a></p>
+								<p><a href="http://tosianyc.com" target="_blank">Tosia NYC</a></p>
+								<p><a href="http://basicrights.com" target="_blank">Basic Rights</a></p>
+								<p><a href="http://newyorksunshine.com" target="_blank">New York Sunshine</a></p>
+								<p><a href="http://negativeunderwear.com" target="_blank">Negative Underwear</a></p>
+								<p>For more projects and information, please <a href="mailto:dinah.bakeer@gmail.com">email me</a>.
+							</div>
+						</div>
+						<div class="grid">
+							<div class="overlay text-center">
+								<h2>Skills</h2>
+								<p>Project Management, Data Migration, Javascript, jQuery, HTML5/CSS, SASS/LESS, AngularJS, Gulp, Grunt, Bower, Node.js, ReactJS, Ruby on Rails, SQL, APIs, Bootstrap, Foundation 6, Trello, Zenhub, Sifter, Shopify (and Shopify Plus), Spree Commerce, Wordpress, Squarespace, Basic Photoshop and InDesign, Sketch, Microsoft Office Suite, Keynote, Mac/Linux/Windows OS, Ideation, Copywriting, Printmaking, Illustration, Creative Writing, Digital Strategy, Makeup Artistry and SFX</p>
+							</div>
+						</div>
+						<div class="grid">
+							<div class="overlay text-center">
+								<h2>Social</h2>
+								<div class="social-links">
+									<div class="margin-right__small">
+										<a class="fa fa-linkedin fa-2x" href="https://www.linkedin.com/in/dinahbakeer/" target="_blank"></a>
+									</div>
+									<div class="margin-right__small">
+										<a class="fa fa-github fa-2x" href="https://github.com/dbakeer" target="_blank"></a>
+									</div>
+									<div class="margin-right__small">
+										<a class="fa fa-twitter fa-2x" href="https://www.twitter.com/mondeparfait" target="_blank"></a>
+									</div>
+									<div class="margin-right__small">
+										<a class="fa fa-instagram fa-2x" href="https://www.instagram.com/pureinternetgold" target="_blank"></a>
+									</div>
+									<div>
+										<a class="fa fa-tumblr fa-2x" href="https://tumblr.com/mondeparfait" target="_blank"></a>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
-					<div class="social-links">
-						<div class="margin-right__small">
-							<a class="fa fa-linkedin fa-2x" href="https://www.linkedin.com/in/dinahbakeer/" target="_blank"></a>
-						</div>
-						<div class="margin-right__small">
-							<a class="fa fa-github fa-2x" href="https://github.com/dbakeer" target="_blank"></a>
-						</div>
-						<div class="margin-right__small">
-							<a class="fa fa-twitter fa-2x" href="https://www.twitter.com/mondeparfait" target="_blank"></a>
-						</div>
-						<div class="margin-right__small">
-							<a class="fa fa-instagram fa-2x" href="https://www.instagram.com/pureinternetgold" target="_blank"></a>
-						</div>
-						<div>
-							<a class="fa fa-tumblr fa-2x" href="https://tumblr.com/mondeparfait" target="_blank"></a>
-						</div>
-					</div>
-					<!-- <a href="/web.html" class="explore">Web Portfolio</a>
-                    <a href="/writing.html" class="explore">Writing/Inspiration</a>
-                    <a href="/about.html" class="explore">About</a>
-                    <a href="/contact.html" class="explore">Contact</a> -->
 				</div>
 			</div>
 			<script src="assets/js/imagesloaded.pkgd.min.js"></script>
